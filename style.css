@@ -1,0 +1,211 @@
+/****RESET*****/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image: url("./imagens/img_fundo.png");
+    background-size: cover;
+    max-height: 100vh;
+    font-family: roboto;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+img {
+    width: 100%;
+}
+/*************************CONTAINER***********************/
+.container {
+    display: grid;
+    grid-template-columns: 60% 20%;
+    justify-content: center;
+    grid-gap: .5rem;
+    grid-template-areas: 
+        "header header"
+        "section aside"
+        "footer footer"
+    ;
+}
+/***************************HEADER***********************/
+header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: 
+        "logo nav-right"
+    ;
+    align-items: center;
+    border: 1px solid black;
+    padding: 2%;
+}
+.logo {
+    grid-area: logo;
+    height: 50px;
+}
+.logo img {
+    width: 50%;
+    height: 50px;
+}
+.nav-right {
+    grid-area: nav-right;
+    text-align: center;
+}
+.nav-right li {
+    display: inline-block;
+    margin: 0 10px;
+}
+.fab, .fas {
+    width: 50px;
+    font-size: 30px;
+    color: blue;
+}
+/*************************SECTION*************************/
+section {
+    grid-area: section;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: 
+        "title title"
+        "form-group dv-result"
+        "dv-table dv-table"
+    ;
+    padding: 2%;
+    background-color: rgba(43, 51, 56, 0.7);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    border: 1px solid blue;
+}
+.title {
+    grid-area: title;
+    margin-bottom: 20px;
+}
+.title h1 {
+    text-align: center;
+    letter-spacing: 0.2rem;
+    color: rgb(208, 222, 231);
+}
+.title p {
+    text-align: justify;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    color: rgb(199, 217, 228);
+}
+/************************ FORMULÁRIO *****************************/
+.form-group {
+    grid-area: form-group;
+    border: 1px solid black;
+}
+.form-title{
+    text-align: center;
+    margin-bottom: 10px;
+    color: rgb(208, 222, 231);
+}
+.form-input {
+    position: relative;
+    margin-bottom: 20px;
+}
+input {
+    width: 80%;
+    height: 46px;
+    font-size: 20px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #FFF;
+    border-bottom: 1px solid #FFF;
+    transition: .25s ease-in-out;
+}
+label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #FFF;
+    transform: translateY(18px);
+    transition: .25s ease-in-out;
+}
+input:focus {
+    border-bottom: 2px solid red;
+    box-shadow: 0 1px 0 0 red;
+}
+input:focus + label {
+    transform: translateY(-10px);
+    font-weight: bold;
+}
+input:not(:placeholder-shown) + label {
+    transform: translateY(-10px);
+}
+input:not(:placeholder-shown) {
+    border-bottom: 2px solid red;
+    box-shadow: 0 1px 0 0 red;
+}
+input::placeholder {
+    color: transparent;
+}
+button {
+    width: 80%;
+    background: rgb(208, 222, 231);
+    color: rgb(43, 51, 56);
+    font-weight: bold;
+    font-size: 20px;
+    padding: 5px 30px;
+    border: none;
+    cursor: pointer;
+}
+.dv-result {
+    grid-area: dv-result;
+    border: 1px solid black;
+}
+#result {
+    font-size: 50px;
+    text-align: center;
+    color: rgb(208, 222, 231);
+}
+.dv-table {
+    grid-area: dv-table;
+}
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    color: #fff;
+}
+table, td, th {
+    border: 1px solid #000;
+}
+td, th {
+    padding: 5px;
+    font-size: 20px;
+    text-align: center;
+}
+aside {
+    grid-area: aside;
+}
+footer {
+    grid-area: footer;
+    background-color: darkgreen;
+}
+
+@media screen and (max-width: 380px) {
+    .container {
+        display: grid;
+        grid-template-columns: 90%;
+        justify-content: center;
+        grid-gap: .5rem;
+        grid-template-areas: 
+            "header"
+            "section"
+            "aside"
+            "footer"
+        ;
+    }
+    td, th {
+        padding: 5px;
+        font-size: 15px;
+        text-align: center;
+    }
+}

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cáuculo do IMC</title>
+        <link rel = "preconnect" href = "https://fonts.gstatic.com">
+        <link href = "https://fonts.googleapis.com/css2? family = Roboto: wght @ 300 & display = swap" rel = "stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <header class="box header">
+                <div class="logo">
+                    <img src="imagens/equacao2.fw.png" alt="">
+                </div>
+                <div class="nav-right">
+                    <ul>
+                        <li><i class="fab fa-instagram-square"></i></li>
+                        <li><i class="fab fa-linkedin"></i></li>
+                        <li><i class="fas fa-bell"></i></li>
+                        <li><i class="fas fa-thumbs-up"></i></li>
+                        <li><i class="fas fa-envelope-square"></i></li>
+                    </ul>
+                </div>
+            </header>
+            <section class="box section">
+                <div class="title">
+                    <h1>Índice de Massa Corpórea</h1>
+                    <p>Índice de Massa Corpórea (IMC), é um parâmetro adotado pela Organização Mundial de Saúde para calcular o peso ideal de cada pessoa. O índice é calculado dividindo-se o peso do paciente pela sua altura elevada ao quadrado. </p>
+                </div>
+                <div class="form-group">
+                    <div class="form-title">
+                        <h2>Calculo do IMC</h2>
+                    </div>
+                    <div class="form-input" id="dvPeso">
+                        <input type="text" id="campoPeso" onkeyup="k(this)" placeholder="Peso">
+                        <label>Peso (em kg)</label>
+                    </div>
+                    <div class="form-input" id="dvAltura">
+                        <input type="text" id="campoAltura" maxlength="6" name="altura" onkeyup="k(this)" placeholder="Altura">
+                        <label>Altura (em metros)</label>
+                    </div>
+                    <div class="form-input" id="btn">
+                        <button type="submit" class="btn" onclick="">Calcular</button>
+                    </div>
+                </div>
+                <div class="dv-result">
+                    <div class="form-title">
+                        <h2>Resultado</h2>
+                    </div>
+                    <h3 id="result"></h3>
+                </div>
+                <div class="dv-table" id="dv-tabela">
+                    <table>
+                        <tr>
+                            <th>Classificação</th>
+                            <th>IMC (Kg/m2)</th>
+                            <th>Risco de Comorbidades</th>
+                        </tr>
+                        <tr id="baixo">
+                            <td>Baixo peso</td>
+                            <td>Menor que 18,5</td>
+                            <td>Baixo</td>
+                        </tr>
+                        <tr id="medio">
+                            <td>Peso normal</td>
+                            <td>18,5 a 24,9</td>
+                            <td>Médio</td>
+                        </tr>
+                        <tr id="aumentado">
+                            <td>Pré-obeso</td>
+                            <td>25 a 29,9</td>
+                            <td>Aumentado</td>
+                        </tr>
+                        <tr id="moderado">
+                            <td>Obesidade I</td>
+                            <td>30 a 34,9</td>
+                            <td>Moderado</td>
+                        </tr>
+                        <tr id="grave">
+                            <td>Obesidade II</td>
+                            <td>35 a 39,9</td>
+                            <td>Grave</td>
+                        </tr>
+                        <tr id="muitograve">
+                            <td>Obesidade III</td>
+                            <td>Igual ou maior que 40</td>
+                            <td>Muito grave</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+            <aside class="box aside">
+                <div>
+                    <img src="imagens/vida_saudavel01.jpg" alt="">
+                </div>
+                <div>
+                    <img src="imagens/vida_saudavel02.jpg" alt="">
+                </div>
+                <div>
+                    <img src="imagens/vida_saudavel03.jpg" alt="">
+                </div>
+            </aside>
+            <footer class="box footer">Footer</footer>
+        </div>
+
+
+
+
+        <!--<header>
+            <h1>Cálculo do Índice de Massa Corpórea</h1>
+            <h3>Índice de Massa Corpórea (IMC), é um parâmetro adotado pela Organização Mundial de Saúde para calcular o peso ideal de cada pessoa. O índice é calculado dividindo-se o peso do paciente pela sua altura elevada ao quadrado. </h3>
+        </header>
+        <section>
+            <div id="info">
+                <div id="infoPeso">
+                    <label>Peso</label><br>
+                    <input type="text" id="campoPeso" placeholder="Informe seu peso">
+                </div>
+                <div id="infoAltura">
+                    <label>Altura</label><br>
+                    <input type="text" id="campoAltura" name="altura" placeholder="Informe sua altura">
+                </div>
+                <div id="btn">
+                    <button type="submit" class="btn" onclick="">Calcular</button>
+                </div>
+                
+                <label id="result">Resultado: </label>
+            </div>
+            <div id="tabela">
+                <table>
+                    <tr>
+                        <th>Classificação</th>
+                        <th>IMC (Kg/m2)</th>
+                        <th>Risco de Comorbidades</th>
+                    </tr>
+                    <tr id="baixo">
+                        <td>Baixo peso</td>
+                        <td>Menor que 18,5</td>
+                        <td>Baixo</td>
+                    </tr>
+                    <tr id="medio">
+                        <td>Peso normal</td>
+                        <td>18,5 a 24,9</td>
+                        <td>Médio</td>
+                    </tr>
+                    <tr id="aumentado">
+                        <td>Pré-obeso</td>
+                        <td>25 a 29,9</td>
+                        <td>Aumentado</td>
+                    </tr>
+                    <tr id="moderado">
+                        <td>Obesidade I</td>
+                        <td>30 a 34,9</td>
+                        <td>Moderado</td>
+                    </tr>
+                    <tr id="grave">
+                        <td>Obesidade II</td>
+                        <td>35 a 39,9</td>
+                        <td>Grave</td>
+                    </tr>
+                    <tr id="muitograve">
+                        <td>Obesidade III</td>
+                        <td>Igual ou maior que 40</td>
+                        <td>Muito grave</td>
+                    </tr>
+                </table>
+            </div>
+        </section>-->
+        <script src="main.js"></script>
+        
+    </body>
+</html>
