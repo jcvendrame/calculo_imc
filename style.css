@@ -206,15 +206,12 @@ footer {
     header {
         grid-area: header;
     }
-    }
     section {
         grid-area: section;
     }
-}
     aside {
         grid-area: aside;
     }
-}
     footer {
         grid-area: footer;
     }
