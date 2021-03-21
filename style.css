@@ -190,7 +190,7 @@ footer {
     background-color: darkgreen;
 }
 
-@media screen and (max-width: 400px) {
+@media (max-width: 400px) {
     .container {
         display: grid;
         grid-template-columns: 100%;
