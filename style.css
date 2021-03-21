@@ -203,6 +203,17 @@ footer {
             "footer"
         ;
     }
+    .container {
+        display: grid;
+        grid-template-columns:100%;
+        grid-gap: .5rem;
+        grid-template-areas: 
+            "header"
+            "section"
+            "aside"
+            "footer"
+        ;
+    }
     header {
         grid-area: header;
     }
