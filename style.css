@@ -35,7 +35,7 @@ img {
 header {
     grid-area: header;
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 40% 60%;
     grid-template-areas: 
         "logo nav-right"
     ;
@@ -60,7 +60,6 @@ header {
     margin: 0 10px;
 }
 .fab, .fas {
-    width: 50px;
     font-size: 30px;
     color: blue;
 }
@@ -190,7 +189,7 @@ footer {
     background-color: darkgreen;
 }
 
-@media only screen and (max-width: 400px) {
+@media screen and (max-width: 400px) {
     .container {
         display: grid;
         grid-template-columns: 100%;
@@ -203,22 +202,27 @@ footer {
             "footer"
         ;
     }
-    .container {
-        display: grid;
-        grid-template-columns:100%;
-        grid-gap: .5rem;
-        grid-template-areas: 
-            "header"
-            "section"
-            "aside"
-            "footer"
-        ;
-    }
     header {
         grid-area: header;
     }
+    .nav-right li {
+        display: inline-block;
+        margin: 0 2px;
+    }
+    .fab, .fas {
+        font-size: 20px;
+        color: blue;
+    }
     section {
         grid-area: section;
+        
+    }
+    .title h1 {
+        font-size: 1.5rem;
+    }
+    .title p {
+        text-align: justify;
+        font-size: 15px;
     }
     aside {
         grid-area: aside;
