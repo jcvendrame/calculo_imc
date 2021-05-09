@@ -1,3 +1,6 @@
+:root {
+    --main-color: rgba(7, 114, 180, 0.801);
+}
 /****RESET*****/
 * {
     margin: 0;
@@ -7,7 +10,7 @@
 body {
     background-image: url("./imagens/img_fundo.png");
     background-size: cover;
-    max-height: 100vh;
+    background-repeat: no-repeat;
     font-family: roboto;
 }
 li {
@@ -16,42 +19,39 @@ li {
 a {
     text-decoration: none;
 }
-img {
-    width: 100%;
-}
+
 /*************************CONTAINER***********************/
 .container {
     display: grid;
-    grid-template-columns: 60% 20%;
-    justify-content: center;
-    grid-gap: .5rem;
+    grid-template-columns: 10% 60% 20% 10%;
+    grid-template-rows: 5fr minmax(300px, 80vh) 5fr;
     grid-template-areas: 
-        "header header"
-        "section aside"
-        "footer footer"
-    ;
+        ". header header ."
+        ". section aside ."
+        ". footer footer .";
 }
 /***************************HEADER***********************/
 header {
     grid-area: header;
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 30% 70%;
     grid-template-areas: 
         "logo nav-right"
     ;
     align-items: center;
-    margin-top: 5px;
-    background-color: rebeccapurple;
+    background-color: var(--main-color);
+    margin-bottom: 5px;
 }
 .logo {
     grid-area: logo;
-    height: 50px;
+    margin-top: 5px;
+    margin-left: 5px;
 }
 .logo img {
     width: 50%;
     height: 50px;
 }
-.nav-right {
+/*.nav-right {
     grid-area: nav-right;
     text-align: center;
 }
@@ -68,23 +68,34 @@ section {
     grid-area: section;
     display: grid;
     grid-template-columns: 50% 50%;
+    grid-template-rows: 20% 40% 40%;
     grid-template-areas: 
         "title title"
         "form-group dv-result"
         "dv-table dv-table"
     ;
-    padding: 2%;
-    background-color: rgba(7, 114, 180, 0.801);
+    background-color: var(--main-color);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    margin-right: 5px;
 }
 .title {
     grid-area: title;
-    margin-bottom: 20px;
+    display: grid;
+    padding: 5px;
+    position: relative;
+}
+.title::before {
+    content: "";
+    position: absolute;
+    left: 15%;
+    bottom: 0;
+    height: 1px;
+    width: 70%;
+    border-bottom: 1px solid black;
 }
 .title h1 {
     text-align: center;
     letter-spacing: 0.2rem;
-    margin-bottom: 10px;
     color: rgb(223, 233, 240);
 }
 .title p {
@@ -98,7 +109,6 @@ section {
 .form-group {
     grid-area: form-group;
     padding: 5px;
-    border: 1px solid black;
 }
 .form-title{
     text-align: center;
@@ -111,8 +121,8 @@ section {
 }
 input {
     width: 80%;
-    height: 46px;
-    font-size: 20px;
+    height: 40px;
+    font-size: 18px;
     background: transparent;
     border: none;
     outline: none;
@@ -158,10 +168,17 @@ button {
 }
 .dv-result {
     grid-area: dv-result;
-    border: 1px solid black;
+    position: relative;
+}
+.dv-result::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 20%;
+    height: 70%;
+    border-left: 1px solid black;
 }
 #result {
-    font-size: 50px;
     text-align: center;
     color: rgb(208, 222, 231);
 }
@@ -178,65 +195,56 @@ table, td, th {
     border: 1px solid #000;
 }
 td, th {
-    padding: 5px;
+    padding: 3px;
     font-size: 20px;
     text-align: center;
 }
 aside {
     grid-area: aside;
-    display: grid;
-    ,
-    align-content: space-between;
+    display: flex;
+    flex-direction: column;
+    background-color: yellow;
 }
-footer {
-    grid-area: footer;
-    background-color: darkgreen;
+aside img {
+    width: 100%;
+    height: 100%;
 }
 
-@media screen and (max-width: 400px) {
+footer {
+    grid-area: footer;
+    background-color: var(--main-color);
+    margin-top: 5px;
+}
+@media screen and (max-width: 600px) {
     .container {
-        display: grid;
-        grid-template-columns: 100%;
-        justify-content: center;
-        grid-gap: .5rem;
-        grid-template-areas: 
-            "header"
-            "section"
-            "aside"
-            "footer"
-        ;
+        display: flex;
+        flex-direction: column;
     }
-    header {
-        grid-area: header;
-    }
-    .nav-right li {
-        display: inline-block;
-        margin: 0 2px;
-    }
-    .fab, .fas {
-        font-size: 20px;
-        color: blue;
-    }
-    section {
-        grid-area: section;
-        
+    .logo img {
+        width: 100%;
+        height: 50px;
     }
     .title h1 {
-        font-size: 1.5rem;
+        font-size: 18px;
     }
     .title p {
-        text-align: justify;
-        font-size: 15px;
+        font-size: 12px;
     }
-    aside {
-        grid-area: aside;
+    section {
+        display: flex;
+        flex-direction: column;
     }
-    footer {
-        grid-area: footer;
+    table {
+        font-size: 10px;
     }
     td, th {
-        padding: 5px;
-        font-size: 15px;
+        font-size: 12px;
         text-align: center;
+    }
+    .form-group {
+        text-align: center;
+    }
+    label {
+        margin-left: 50px;
     }
 }
