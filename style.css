@@ -24,7 +24,7 @@ a {
 .container {
     display: grid;
     grid-template-columns: 10% 60% 20% 10%;
-    grid-template-rows: 5fr minmax(300px, 80vh) 5fr;
+    grid-template-rows: 5fr minmax(300px, 89vh) 5fr;
     grid-template-areas: 
         ". header header ."
         ". section aside ."
@@ -180,6 +180,8 @@ button {
 }
 #result {
     text-align: center;
+    font-size: 30px;
+    margin-top: 50px;
     color: rgb(208, 222, 231);
 }
 .dv-table {
@@ -203,17 +205,21 @@ aside {
     grid-area: aside;
     display: flex;
     flex-direction: column;
-    background-color: yellow;
 }
 aside img {
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    margin-bottom: 4px;
 }
 
 footer {
     grid-area: footer;
+    display: flex;
     background-color: var(--main-color);
     margin-top: 5px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
 }
 @media screen and (max-width: 600px) {
     .container {
